@@ -1,22 +1,38 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { Feather } from "@expo/vector-icons";
 
-export default function Balance() {
+export default function Balance({ saldo, gastos }) {
+  const [showBalance, setShowBalance] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.item}>
         <Text style={styles.itemTitle}>Saldo</Text>
-        <View styles={styles.content}>
+        <TouchableOpacity
+          style={styles.content}
+          onPress={() => setShowBalance(!showBalance)}
+        >
           <Text style={styles.currencySymbol}>R$</Text>
-          <Text style={styles.balance}>15.000,00</Text>
-        </View>
+          <Text style={styles.balance}>
+            {showBalance ? (
+              saldo
+            ) : (
+              <Feather name="eye-off" size={24} color="#a5a5a5" />
+            )}
+          </Text>
+          <Text> </Text>
+          {showBalance ? (
+            <Feather name="eye" size={24} color="#a5a5a5" />
+          ) : null}
+        </TouchableOpacity>
       </View>
 
       <View style={styles.item}>
         <Text style={styles.itemTitle}>Gastos</Text>
-        <View styles={styles.content}>
+        <View style={styles.content}>
           <Text style={styles.currencySymbol}>R$</Text>
-          <Text style={styles.balance}>420,00</Text>
+          <Text style={styles.expenses}>{gastos}</Text>
         </View>
       </View>
     </View>
@@ -33,27 +49,33 @@ const styles = StyleSheet.create({
     marginTop: -24,
     marginStart: 14,
     marginEnd: 14,
-    borderRadius: 6,
-    paddingTop: 16,
-    paddingBottom: 16,
+    borderRadius: 4,
+    paddingTop: 22,
+    paddingBottom: 22,
     zIndex: 99,
   },
-  content: {
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "red",
-  },
-  item: {},
   itemTitle: {
-    fontSize: 16,
+    fontSize: 20,
     color: "#A5A5A5",
   },
+  content: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  item: {},
+
   currencySymbol: {
-    fontSize: 16,
+    color: "#A5A5A5",
+    marginRight: 6,
   },
   balance: {
-    fontSize: 24,
+    fontSize: 22,
+    color: "#2ecc71",
+    fontWeight: "bold",
+  },
+  expenses: {
+    fontSize: 22,
+    color: "#e74c3c",
     fontWeight: "bold",
   },
 });

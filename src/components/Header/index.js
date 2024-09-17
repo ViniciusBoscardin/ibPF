@@ -37,7 +37,7 @@ const styles = {
     justifyContent: "space-between",
   },
   username: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "bold",
     color: "#fff",
   },
