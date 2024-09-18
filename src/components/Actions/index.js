@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     marginRight: 32,
   },
   areaButton: {
-    width: 55,
-    height: 55,
+    width: 50,
+    height: 50,
     backgroundColor: "#ecf0f1",
     borderRadius: 30,
     justifyContent: "center",
@@ -93,5 +93,6 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textAlign: "center",
     fontWeight: "bold",
+    fontSize: 12,
   },
 });

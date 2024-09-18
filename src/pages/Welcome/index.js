@@ -40,16 +40,31 @@ export default function Welcome() {
         <Text style={{ textAlign: "center", fontSize: 16, color: "gray" }}>
           Faça login para continuar
         </Text>
+
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
             navigation.navigate("Home");
           }}
         >
-          <Text style={styles.buttonText}>Entrar</Text>
+          <Text
+            onPress={() => {
+              navigation.navigate("Home");
+            }}
+            style={styles.buttonText}
+          >
+            Entrar
+          </Text>
         </TouchableOpacity>
         <View style={styles.containerBottom}>
-          <Text style={{ textAlign: "center", fontSize: 16, color: "gray" }}>
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 16,
+              color: "gray",
+              marginTop: 20,
+            }}
+          >
             Esqueceu a senha?
           </Text>
         </View>
@@ -68,7 +83,7 @@ export default function Welcome() {
           <Text
             onPress={() => {
               setIsClicked(!isClicked);
-              navigation.navigate("SignIn");
+              navigation.navigate("Home");
             }}
             style={{
               color: isClicked ? "#2b635f" : "#229c93",
@@ -93,6 +108,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 40,
   },
+
   banner: {
     width: "100%",
     resizeMode: "contain",
