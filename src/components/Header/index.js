@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StatusBar } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StatusBar,
+  Platform,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 
@@ -33,7 +39,7 @@ export default function Header({ name }) {
 const styles = {
   container: {
     backgroundColor: "#229c93",
-    paddingTop: statusBarHeight,
+    paddingTop: 20,
     flexDirection: "row",
     paddingStart: 16,
     paddingEnd: 16,

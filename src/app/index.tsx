@@ -6,7 +6,11 @@ import Routes from "../routes";
 export default function Index() {
   return (
     <NavigationContainer independent={true}>
-      <StatusBar barStyle="light-content" backgroundColor="#229c93" />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#229c93"
+        hidden={false}
+      />
       <Routes />
     </NavigationContainer>
   );

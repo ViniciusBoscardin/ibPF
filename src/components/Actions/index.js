@@ -85,14 +85,17 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "#ecf0f1",
     borderRadius: 30,
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    alignSelf: "center",
     marginRight: 10,
   },
   labelButton: {
     marginTop: 4,
-    textAlign: "center",
     fontWeight: "bold",
     fontSize: 12,
+    textAlign: "center",
+    left: -5,
   },
 });

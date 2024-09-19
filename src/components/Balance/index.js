@@ -63,14 +63,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   item: {},
-
   currencySymbol: {
     color: "#A5A5A5",
     marginRight: 6,
   },
   balance: {
     fontSize: 22,
-    color: "#2ecc71",
+    color: "#48be9a",
     fontWeight: "bold",
   },
   expenses: {

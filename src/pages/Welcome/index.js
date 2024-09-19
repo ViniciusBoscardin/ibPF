@@ -7,6 +7,7 @@ import {
   Touchable,
   TouchableOpacity,
   Button,
+  StatusBar,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
@@ -18,6 +19,11 @@ export default function Welcome() {
   return (
     <View style={styles.container}>
       <View style={styles.containerLogo}>
+        <StatusBar
+          backgroundColor="#229c93"
+          barStyle="light-content"
+          translucent={false}
+        />
         <Animatable.Image
           animation="flipInX"
           source={require("../../assets/logo.png")}
@@ -43,26 +49,20 @@ export default function Welcome() {
 
         <TouchableOpacity
           style={styles.button}
+          delayPressIn={0}
           onPress={() => {
             navigation.navigate("Home");
           }}
         >
-          <Text
-            onPress={() => {
-              navigation.navigate("Home");
-            }}
-            style={styles.buttonText}
-          >
-            Entrar
-          </Text>
+          <Text style={styles.buttonText}>Entrar</Text>
         </TouchableOpacity>
+
         <View style={styles.containerBottom}>
           <Text
             style={{
               textAlign: "center",
               fontSize: 16,
               color: "gray",
-              marginTop: 20,
             }}
           >
             Esqueceu a senha?
@@ -82,11 +82,10 @@ export default function Welcome() {
           Não tem uma conta? {""}
           <Text
             onPress={() => {
-              setIsClicked(!isClicked);
-              navigation.navigate("Home");
+              navigation.navigate("SignIn");
             }}
             style={{
-              color: isClicked ? "#2b635f" : "#229c93",
+              color: "#229c93",
               fontWeight: "bold",
               position: "relative",
               bottom: "10%",
@@ -108,7 +107,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 40,
   },
-
   banner: {
     width: "100%",
     resizeMode: "contain",
@@ -135,7 +133,7 @@ const styles = StyleSheet.create({
   },
   containerBottom: {
     position: "absolute",
-    bottom: "50%",
+    bottom: "45%",
     width: "100%",
     justifyContent: "center",
     alignSelf: "center",
@@ -150,6 +148,7 @@ const styles = StyleSheet.create({
     bottom: "55%",
     alignItems: "center",
     justifyContent: "center",
+    zIndex: 10,
   },
   buttonText: {
     color: "white",
