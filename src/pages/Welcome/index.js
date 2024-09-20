@@ -17,86 +17,88 @@ export default function Welcome() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.containerLogo}>
-        <StatusBar
-          backgroundColor="#229c93"
-          barStyle="light-content"
-          translucent={false}
-        />
-        <Animatable.Image
-          animation="flipInX"
-          source={require("../../assets/logo.png")}
-          style={{ width: "100%", resizeMode: "contain" }}
-        />
-      </View>
+    <>
+      <View style={styles.container}>
+        <View style={styles.containerLogo}>
+          <StatusBar
+            backgroundColor="#229c93"
+            barStyle="light-content"
+            translucent={false}
+          />
+          <Animatable.Image
+            animation="flipInX"
+            source={require("../../assets/logo.png")}
+            style={{ width: "100%", resizeMode: "contain" }}
+          />
+        </View>
 
-      <View style={styles.containerForm}>
-        <Text style={styles.banner}>Bem-vindo(a)</Text>
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: 17,
-            color: "gray",
-            paddingTop: 5,
-          }}
-        >
-          Vinícius Boscardin
-        </Text>
-        <Text style={{ textAlign: "center", fontSize: 16, color: "gray" }}>
-          Faça login para continuar
-        </Text>
-
-        <TouchableOpacity
-          style={styles.button}
-          delayPressIn={0}
-          onPress={() => {
-            navigation.navigate("Home");
-          }}
-        >
-          <Text style={styles.buttonText}>Entrar</Text>
-        </TouchableOpacity>
-
-        <View style={styles.containerBottom}>
+        <View style={styles.containerForm}>
+          <Text style={styles.banner}>Bem-vindo(a)</Text>
           <Text
             style={{
               textAlign: "center",
-              fontSize: 16,
+              fontSize: 17,
               color: "gray",
+              paddingTop: 5,
             }}
           >
-            Esqueceu a senha?
+            Vinícius Boscardin
           </Text>
-        </View>
+          <Text style={{ textAlign: "center", fontSize: 16, color: "gray" }}>
+            Faça login para continuar
+          </Text>
 
-        <View style={styles.touchId}>
-          <Image
-            source={require("../../assets/pngwing.com.png")}
-            style={{ width: "30%", resizeMode: "contain" }}
-          />
-        </View>
-      </View>
-
-      <View style={styles.bottom}>
-        <Text style={{ textAlign: "center", fontSize: 16, color: "gray" }}>
-          Não tem uma conta? {""}
-          <Text
+          <TouchableOpacity
+            style={styles.button}
+            delayPressIn={0}
             onPress={() => {
-              navigation.navigate("SignIn");
-            }}
-            style={{
-              color: "#229c93",
-              fontWeight: "bold",
-              position: "relative",
-              bottom: "10%",
-              padding: 10,
+              navigation.navigate("Home");
             }}
           >
-            <Text>Cadastre-se</Text>
+            <Text style={styles.buttonText}>Entrar</Text>
+          </TouchableOpacity>
+
+          <View style={styles.containerBottom}>
+            <Text
+              style={{
+                textAlign: "center",
+                fontSize: 16,
+                color: "gray",
+              }}
+            >
+              Esqueceu a senha?
+            </Text>
+          </View>
+
+          <View style={styles.touchId}>
+            <Image
+              source={require("../../assets/pngwing.com.png")}
+              style={{ width: "30%", resizeMode: "contain" }}
+            />
+          </View>
+        </View>
+
+        <View style={styles.bottom}>
+          <Text style={{ textAlign: "center", fontSize: 16, color: "gray" }}>
+            Não tem uma conta? {""}
+            <Text
+              onPress={() => {
+                navigation.navigate("SignIn");
+              }}
+              style={{
+                color: "#229c93",
+                fontWeight: "bold",
+                position: "relative",
+                bottom: "10%",
+                padding: 10,
+              }}
+            >
+              <Text>Cadastre-se</Text>
+            </Text>
           </Text>
-        </Text>
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
