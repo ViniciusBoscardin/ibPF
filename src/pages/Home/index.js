@@ -3,6 +3,7 @@ import Balance from "../../components/Balance";
 import Movements from "../../components/Movements";
 import Actions from "../../components/Actions";
 import { Text, View, StyleSheet, FlatList } from "react-native";
+import { TabBar } from "@/src/components/TabBar";
 
 const list = [
   {
@@ -47,6 +48,104 @@ const list = [
     date: "10/10/2020",
     type: 1, // income
   },
+  {
+    id: 7,
+    label: "Pix",
+    value: "320,00",
+    date: "10/10/2020",
+    type: 1, // expense
+  },
+  {
+    id: 8,
+    label: "Pix",
+    value: "320,00",
+    date: "10/10/2020",
+    type: 1, // expense
+  },
+  {
+    id: 9,
+    label: "Gasolina",
+    value: "120,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
+  {
+    id: 10,
+    label: "Cerveja",
+    value: "80,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
+  {
+    id: 11,
+    label: "Netflix",
+    value: "7.000,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
+  {
+    id: 12,
+    label: "Salário",
+    value: "7.000,00",
+    date: "10/10/2020",
+    type: 1, // income
+  },
+  {
+    id: 13,
+    label: "Pix",
+    value: "320,00",
+    date: "10/10/2020",
+    type: 1, // expense
+  },
+  {
+    id: 14,
+    label: "Conta de Internet",
+    value: "99,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
+  {
+    id: 15,
+    label: "Salário",
+    value: "7.000,00",
+    date: "10/10/2020",
+    type: 1, // income
+  },
+  {
+    id: 16,
+    label: "Pix",
+    value: "320,00",
+    date: "10/10/2020",
+    type: 1, // expense
+  },
+  {
+    id: 17,
+    label: "Pix",
+    value: "320,00",
+    date: "10/10/2020",
+    type: 1, // expense
+  },
+  {
+    id: 18,
+    label: "Gasolina",
+    value: "120,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
+  {
+    id: 19,
+    label: "Cerveja",
+    value: "80,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
+  {
+    id: 20,
+    label: "Netflix",
+    value: "7.000,00",
+    date: "10/10/2020",
+    type: 0, // expense
+  },
 ];
 
 export default function Home() {
@@ -56,7 +155,9 @@ export default function Home() {
 
       <Balance saldo="15.956,00" gastos="420,00" />
 
-      <Actions />
+      <View style={styles.containerBtn}>
+        <Actions />
+      </View>
 
       <Text style={styles.title}>Últimas Movimentações</Text>
 
@@ -67,6 +168,7 @@ export default function Home() {
         keyExtractor={(item) => String(item.id)}
         renderItem={({ item }) => <Movements data={item} />}
       />
+      <TabBar />
     </View>
   );
 }

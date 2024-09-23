@@ -63,6 +63,12 @@ export default function Actions() {
         </View>
         <Text style={styles.labelButton}>Cashback</Text>
       </TouchableOpacity>
+      <TouchableOpacity styles={styles.actionButton}>
+        <View style={styles.areaButton}>
+          <AntDesign name="smileo" size={26} color="#000" />
+        </View>
+        <Text style={styles.labelButton}>Cashback</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }

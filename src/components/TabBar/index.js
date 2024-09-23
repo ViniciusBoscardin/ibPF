@@ -1,11 +1,19 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export const TabBar = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.containerTabBar}>
-        <TouchableOpacity style={styles.tabItem}>
+        <TouchableOpacity
+          style={styles.tabItem}
+          onPress={() => {
+            navigation.navigate("Welcome");
+          }}
+        >
           <Ionicons name="home" size={25} color="white" />
           <Text style={styles.tabText}>Home</Text>
         </TouchableOpacity>

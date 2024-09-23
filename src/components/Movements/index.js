@@ -27,7 +27,7 @@ export default function Movements({ data }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginBottom: 24,
+    marginBottom: 14,
     borderBottomWidth: 0.5,
     borderBottomColor: "#DADADA",
   },
