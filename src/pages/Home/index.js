@@ -4,6 +4,7 @@ import Movements from "../../components/Movements";
 import Actions from "../../components/Actions";
 import { Text, View, StyleSheet, FlatList } from "react-native";
 import { TabBar } from "@/src/components/TabBar";
+import usePosts from "@/src/hooks/usePosts";
 
 const list = [
   {
@@ -149,6 +150,9 @@ const list = [
 ];
 
 export default function Home() {
+  const { data } = usePosts();
+  console.log(data);
+
   return (
     <View style={styles.container}>
       <Header name="Vinícius Boscardin" />
@@ -163,10 +167,10 @@ export default function Home() {
 
       <FlatList
         style={styles.list}
-        data={list}
+        data={data}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => <Movements data={item} />}
+        renderItem={({ item }) => <Movements data={list} />}
       />
       <TabBar />
     </View>
