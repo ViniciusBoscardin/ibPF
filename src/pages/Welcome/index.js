@@ -13,7 +13,6 @@ import { useNavigation } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 
 export default function Welcome() {
-  const [isClicked, setIsClicked] = React.useState(false);
   const navigation = useNavigation();
 
   return (

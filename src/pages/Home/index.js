@@ -150,9 +150,6 @@ const list = [
 ];
 
 export default function Home() {
-  const { data } = usePosts();
-  console.log(data);
-
   return (
     <View style={styles.container}>
       <Header name="Vinícius Boscardin" />
@@ -167,10 +164,10 @@ export default function Home() {
 
       <FlatList
         style={styles.list}
-        data={data}
+        data={list}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => String(item.id)}
-        renderItem={({ item }) => <Movements data={list} />}
+        renderItem={({ item }) => <Movements data={item} />}
       />
       <TabBar />
     </View>

@@ -6,6 +6,8 @@ import SignIn from "../pages/SignIn";
 
 import Home from "../pages/Home";
 
+import CreditCards from "../pages/CreditCards";
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
@@ -24,6 +26,11 @@ export default function Routes() {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CreditCards"
+        component={CreditCards}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

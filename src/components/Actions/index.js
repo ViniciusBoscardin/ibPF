@@ -7,8 +7,11 @@ import {
 } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Actions() {
+  const navigation = useNavigation();
+
   return (
     <ScrollView
       style={styles.container}
@@ -31,7 +34,21 @@ export default function Actions() {
 
       <TouchableOpacity styles={styles.actionButton}>
         <View style={styles.areaButton}>
-          <AntDesign name="creditcard" size={26} color="#000" />
+          <AntDesign
+            name="creditcard"
+            size={26}
+            color="#000"
+            onPress={() => {
+              navigation.navigate("CreditCards");
+            }}
+          />
+        </View>
+        <Text style={styles.labelButton}>Cartões</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity styles={styles.actionButton}>
+        <View style={styles.areaButton}>
+          <AntDesign name="wallet" size={26} color="#000" />
         </View>
         <Text style={styles.labelButton}>Carteira</Text>
       </TouchableOpacity>
@@ -57,12 +74,6 @@ export default function Actions() {
         <Text style={styles.labelButton}>Limites</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity styles={styles.actionButton}>
-        <View style={styles.areaButton}>
-          <AntDesign name="smileo" size={26} color="#000" />
-        </View>
-        <Text style={styles.labelButton}>Cashback</Text>
-      </TouchableOpacity>
       <TouchableOpacity styles={styles.actionButton}>
         <View style={styles.areaButton}>
           <AntDesign name="smileo" size={26} color="#000" />

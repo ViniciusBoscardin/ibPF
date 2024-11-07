@@ -12,6 +12,6 @@ export default function usePosts() {
         setLoading(false);
       });
   }, []);
-
+  console.log(posts);
   return { posts, loading };
 }
